@@ -18,48 +18,140 @@ code {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-
-  width: 90%;
-  max-width: 1200px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  height: 60px;
+  width: 90%;
+  max-width: 1200px;
+  top: 0;
   padding: 15px 30px;
 
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 20px;
-
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-
   z-index: 1000;
 }
 
-.nav-links {
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar-menu {
   list-style: none;
   display: flex;
   gap: 20px;
-  justify-content: right;
+  justify-content: flex-end;
   flex: 1;
 }
 
-.nav-links li a {
+.navbar-container .navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  text-align: center;
+  flex: 1;
+  list-style: none;
+}
+
+.navbar-container .navbar-menu li a {
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 5px;
   color: black;
+  font-size: 1.3rem;
   font-weight: bold;
+  padding: 3px 20px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-.logo a {
-  text-decoration: none;
-  color: black;
-  font-size: 24px;
-  font-weight: bold;
+.navbar-container .navbar-menu li a:hover,
+.navbar-container .navbar-menu li a.active {
+  color: #4728b8;
+  text-color: #4728b8;
+}
+
+.navbar-toggle {
+  display: none;
+  background: transparent;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 880px) {
+  .navbar {
+    backdrop-filter: none;
+  }
+
+  .navbar-container .navbar-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.7rem;
+    position: absolute;
+    height: 100vh;
+    width: 250px;
+    top: 0;
+    right: 0;
+    padding: 5rem 1.5rem;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar-container .navbar-menu.active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .navbar-toggle {
+    display: block;
+    z-index: 999;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .navbar-logo {
+    font-size: 1.7rem;
+  }
+
+  .navbar-container .navbar-menu li a {
+    font-size: 1.2rem;
+    padding: 3px 15px;
+  }
 }
