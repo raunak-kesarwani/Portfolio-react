@@ -1,3 +1,18 @@
+/* ==========================================
+   COLOR PALETTE (Extracted from RK_logo.png)
+   ========================================== */
+:root {
+  --bg-primary: #1b2838;
+  --bg-secondary: #2a3f5a;
+  --accent-gold: #c5a880;
+  --text-main: #e5e9f0;
+  --heading-primary: #ffffff;
+  --heading-secondary: #d1d7e0;
+  --heading-sub: #909bb0;
+  --glass-border: rgba(197, 168, 128, 0.2);
+  --glass-bg: rgba(27, 40, 56, 0.4);
+}
+
 body {
   margin: 0;
   font-family:
@@ -5,7 +20,8 @@ body {
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #4728b8;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
 }
 
 code {
@@ -15,24 +31,23 @@ code {
 
 .navbar {
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
   width: 90%;
   max-width: 1200px;
-  top: 0;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 15px 30px;
 
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--glass-bg);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--glass-border);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   z-index: 1000;
 }
 
@@ -47,7 +62,7 @@ code {
 
 .navbar-logo a {
   text-decoration: none;
-  color: black;
+  color: var(--text-main);
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
@@ -75,7 +90,7 @@ code {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: black;
+  color: var(--text-main);
   font-size: 1.3rem;
   font-weight: bold;
   padding: 3px 20px;
@@ -87,8 +102,7 @@ code {
 
 .navbar-container .navbar-menu li a:hover,
 .navbar-container .navbar-menu li a.active {
-  color: #4728b8;
-  text-color: #4728b8;
+  color: var(--accent-gold);
 }
 
 .navbar-toggle {
@@ -104,7 +118,7 @@ code {
   width: 25px;
   height: 3px;
   margin: 5px auto;
-  background-color: white;
+  background-color: var(--text-main);
   transition: all 0.3s ease-in-out;
 }
 
@@ -112,6 +126,7 @@ code {
 @media (max-width: 880px) {
   .navbar {
     backdrop-filter: none;
+    background: var(--bg-primary);
   }
 
   .navbar-container .navbar-menu {
@@ -125,7 +140,13 @@ code {
     top: 0;
     right: 0;
     padding: 5rem 1.5rem;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    background: rgba(
+      27,
+      40,
+      56,
+      0.95
+    ); /* High opacity version of your steel navy background */
     backdrop-filter: blur(10px);
   }
 

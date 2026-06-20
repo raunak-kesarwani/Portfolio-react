@@ -1,10 +1,16 @@
 import './App.css';
-import Navigation from './components/Navigation';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './routes/Home.js';
 
 function App() {
   return (
     <>
-      <Navigation title="Raunak Kesarwani" />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
+
     </>
   );
 }
