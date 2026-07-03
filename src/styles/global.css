@@ -29,6 +29,7 @@ code {
     source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+/* NAVIGATION BAR STYLES  */
 .navbar {
   position: fixed;
   display: flex;
@@ -132,7 +133,7 @@ code {
     background: var(--bg-primary);
   }
 
-.navbar-container .navbar-menu {
+  .navbar-container .navbar-menu {
     display: none;
     flex-direction: column;
     align-items: flex-start;
@@ -180,4 +181,34 @@ code {
     font-size: 1.2rem;
     padding: 3px 15px;
   }
+}
+
+/* HERO SECTION STYLES */
+.Hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }

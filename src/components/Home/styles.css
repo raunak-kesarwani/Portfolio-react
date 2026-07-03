@@ -1,0 +1,210 @@
+.hero-imagecard {
+  position: relative;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  border: 4px solid var(--accent-gold);
+  perspective: 1000px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-imagecard:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 15px var(--accent-gold),
+    0 0 40px rgba(197, 168, 128, 0.8),
+    0 0 80px rgba(197, 168, 128, 0.4);
+}
+
+.hero-imagecard.flipped {
+  transform: rotateY(180deg);
+}
+
+.hero-imagecard.flipped:hover {
+  transform: rotateY(180deg) scale(1.08);
+}
+
+.front,
+.back {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front img,
+.back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--accent-gold);
+  margin-bottom: 10px;
+}
+
+.title a {
+  text-decoration: none;
+  color: var(--accent-gold);
+  transition: color 0.3s ease;
+}
+
+.title a:hover {
+  color: var(--accent-gold);
+}
+
+.description {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+}
+
+.description p {
+  margin: 1rem 0;
+}
+
+.description p:first-child {
+  margin-bottom: 16px;
+  margin-top: 0px;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.social-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--heading-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--text-main);
+  font-size: 1.4rem;
+  border-radius: 12px;
+  text-decoration: none;
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+  outline: none;
+}
+
+.social-links a:hover {
+  color: var(--accent-gold);
+  background: var(--bg-primary);
+  border-color: var(--accent-gold);
+  transform: translateY(-2px) scale(1.08);
+  box-shadow:
+    0 0 12px rgba(197, 168, 128, 0.35),
+    0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.social-links a:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+.social-links a:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-decoration: none;
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+  outline: none;
+}
+
+.resume-btn:hover {
+  color: var(--accent-gold);
+  background: var(--bg-primary);
+  border-color: var(--accent-gold);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow:
+    0 0 12px rgba(197, 168, 128, 0.35),
+    0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.resume-btn:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+.resume-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.social-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
