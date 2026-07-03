@@ -76,15 +76,6 @@ code {
   flex: 1;
 }
 
-.navbar-container .navbar-menu {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: flex-end;
-  text-align: center;
-  flex: 1;
-  list-style: none;
-}
-
 .navbar-container .navbar-menu li a {
   text-decoration: none;
   display: flex;
@@ -122,6 +113,18 @@ code {
   transition: all 0.3s ease-in-out;
 }
 
+.navbar-toggle.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 880px) {
   .navbar {
@@ -129,7 +132,7 @@ code {
     background: var(--bg-primary);
   }
 
-  .navbar-container .navbar-menu {
+.navbar-container .navbar-menu {
     display: none;
     flex-direction: column;
     align-items: flex-start;
@@ -141,19 +144,21 @@ code {
     right: 0;
     padding: 5rem 1.5rem;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-    background: rgba(
-      27,
-      40,
-      56,
-      0.95
-    ); /* High opacity version of your steel navy background */
+    background: rgba(27, 40, 56, 0.3);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 25px 0 0 25px;
+    border-right: none;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .navbar-container .navbar-menu.active {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    transform: translateX(0);
   }
 
   .navbar-toggle {

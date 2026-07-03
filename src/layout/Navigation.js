@@ -13,7 +13,7 @@ function Navigation(props) {
                     <a href="/" onClick={() => window.location.reload()}>{props.title}</a>
                 </div>
 
-                <button className="navbar-toggle" onClick={toggleMenu}>
+                <button className={`navbar-toggle ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>
