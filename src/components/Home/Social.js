@@ -15,7 +15,7 @@ const Social = (props) => {
                 <a href={props.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                     <SlSocialInstagram />
                 </a>
-                <a href={props.linkedIn} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href={props.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <SlSocialLinkedin />
                 </a>
                 <a href={props.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
