@@ -1,7 +1,7 @@
 import React from 'react'
 import Navigation from '../layout/Navigation'
 
-const Home = () => {
+const Projects = () => {
     return (
         <>
             <Navigation title="Raunak Kesarwani" />
@@ -9,4 +9,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Projects;
